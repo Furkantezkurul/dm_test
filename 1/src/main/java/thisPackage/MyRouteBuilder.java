@@ -13,6 +13,10 @@ public class MyRouteBuilder extends RouteBuilder {
      */
     public void configure() {
 
+        // I am aware that this code could be refactored into multiple more readable and maintainable methods. 
+        // But I also don't think that the task was to write a function that can read both, XML and Json files.
+        // Thats why I kept it as a single method, because the method to only read Json would be readable.
+
         from("file:1/src/data?noop=true")
             .choice()
                 // Check if the file is JSON
